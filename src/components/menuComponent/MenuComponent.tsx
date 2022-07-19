@@ -14,12 +14,19 @@ import {
 } from '@mui/material';
 import React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Link } from 'react-router-dom';
 
 interface IMenuComponentProps {
   window?: () => Window;
 }
 
-const navItems = ['Home', 'Countries',  'Login', 'Logout','Contact'];
+const navItems = [
+  { name: 'Home', link: '/' },
+  { name: 'Countries', link: 'contries' },
+  { name: 'Login', link: 'login' },
+  { name: 'Logout', link: 'logout' },
+  { name: 'Contact', link: 'contact' },
+];
 const drawerWidth = 240;
 const MenuComponent: React.FC = (props: IMenuComponentProps) => {
   const { window } = props;
@@ -40,9 +47,11 @@ const MenuComponent: React.FC = (props: IMenuComponentProps) => {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item.name} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+              <Link to={item.link}>
+                <ListItemText primary={item.name} />
+              </Link>
             </ListItemButton>
           </ListItem>
         ))}
@@ -72,9 +81,11 @@ const MenuComponent: React.FC = (props: IMenuComponentProps) => {
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               {navItems.map((item) => (
-                <Button key={item} sx={{ color: '#fff' }}>
-                  {item}
-                </Button>
+                <Link to={item.link}>
+                  <Button key={item.name} sx={{ color: '#fff' }}>
+                    {item.name}
+                  </Button>
+                </Link>
               ))}
             </Box>
             <Box component='nav'>
