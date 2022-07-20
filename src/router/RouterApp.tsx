@@ -9,7 +9,7 @@ import LogoutPage from '../pages/LogoutPage/LogoutPage';
 interface IRouterProps {
   children: JSX.Element | JSX.Element[];
 }
-const RouterApp = (props: IRouterProps) => {
+const RouterApp:React.FC<IRouterProps> = (props) => {
   return (
     <>
       <header className='App-header'>
@@ -17,6 +17,7 @@ const RouterApp = (props: IRouterProps) => {
           {props.children}
           <Routes>
             <Route path='/' element={<HomePage />} />
+            <Route path='/home' element={<HomePage />} />
             <Route path='/contries' element={<ContriesPage />} />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/logout' element={<LogoutPage />} />

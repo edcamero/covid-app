@@ -21,7 +21,7 @@ interface IMenuComponentProps {
 }
 
 const navItems = [
-  { name: 'Home', link: '/' },
+  { name: 'Home', link: 'home' },
   { name: 'Countries', link: 'contries' },
   { name: 'Login', link: 'login' },
   { name: 'Logout', link: 'logout' },
