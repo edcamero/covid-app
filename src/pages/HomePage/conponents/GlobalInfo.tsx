@@ -7,7 +7,7 @@ interface GlobalInfoProps {
 }
 const GlobalInfo: React.FC<GlobalInfoProps> = ({ info }) => {
   return (
-    <List sx={{ width: '100%', maxWidth: 160, bgcolor: 'background.paper' }}>
+    <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
       <ListItem alignItems='flex-start'>
         <ListItemText
           primary='Date'

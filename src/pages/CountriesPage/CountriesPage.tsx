@@ -1,7 +1,7 @@
 import React from 'react';
 
-const ContriesPage = () => {
+const CountriesPage = () => {
   return <>Contrie pages</>;
 };
 
-export default ContriesPage;
+export default CountriesPage;
